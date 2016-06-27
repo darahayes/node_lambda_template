@@ -30,11 +30,6 @@ gulp.task('zip', function() {
         .pipe(gulp.dest('./'));
 });
 
-//upload function to AWS Lambda
-gulp.task('upload', function(callback) {
-    awsLambda.deploy('./build.zip', require("./lambda-config.js"), callback);
-});
-
 gulp.task('build', function(callback) {
     return runSequence(
         ['clean'],
@@ -44,4 +39,7 @@ gulp.task('build', function(callback) {
     );
 });
 
-gulp.task('deploy', ['build', 'upload']);
+//upload function to AWS Lambda
+gulp.task('deploy', ['build'], function(callback) {
+    awsLambda.deploy('./build.zip', require("./lambda-config.js"), callback);
+});

@@ -48,13 +48,7 @@ Additional root directories are packaged too. e.g. a `utils` or `lib` directory 
 
 run `gulp build` to check this out.
 
-###gulp upload
-creates or updates a lambda function using the built project. the `AWS_AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` environment variables must be set.
-
-run `gulp upload` to try this. The new function should be in the [Lambda console](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2) (us-west-2)
-
 ###gulp deploy
-combines the build and upload tasks into a single task.
+Runs a build and creates/updates a lambda function. the `AWS_AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` environment variables must be set.
 
-run `gulp deploy`
-
+run `gulp deploy` to try this. The new function should be in the [Lambda console](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2) (us-west-2)

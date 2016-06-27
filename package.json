@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/dyngo/test_lambda_function/issues"
   },
-  "homepage": "https://github.com/dyngo/test_lambda_function#readme"
+  "homepage": "https://github.com/dyngo/test_lambda_function#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-install": "^0.6.0",
+    "gulp-zip": "^3.0.2",
+    "node-aws-lambda": "0.1.8",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {
+    
+  }
 }

@@ -6,31 +6,31 @@ var runSequence = require('run-sequence');
 var awsLambda = require("node-aws-lambda");
 
 gulp.task('clean', function() {
-    return del(['./dist', './dist.zip']);
+    return del(['./build', './build.zip']);
 });
 
 gulp.task('js', function() {
-    return gulp.src('index.js')
-        .pipe(gulp.dest('dist/'));
+    return gulp.src(['index.js', '*/*.js'])
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('node-mods', function() {
     return gulp.src('./package.json')
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('build/'))
         .pipe(install({production: true}));
 });
 
 gulp.task('zip', function() {
-    return gulp.src(['dist/**/*', '!dist/package.json'])
-        .pipe(zip('dist.zip'))
+    return gulp.src(['build/**/*', '!build/package.json'])
+        .pipe(zip('build.zip'))
         .pipe(gulp.dest('./'));
 });
 
 gulp.task('upload', function(callback) {
-    awsLambda.deploy('./dist.zip', require("./lambda-config.js"), callback);
+    awsLambda.deploy('./build.zip', require("./lambda-config.js"), callback);
 });
 
-gulp.task('deploy', function(callback) {
+gulp.task('build', function(callback) {
     return runSequence(
         ['clean'],
         ['js', 'node-mods'],
@@ -39,3 +39,5 @@ gulp.task('deploy', function(callback) {
         callback
     );
 });
+
+gulp.task('deploy', ['build', 'upload']);

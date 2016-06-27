@@ -1,0 +1,19 @@
+{
+  "name": "test_lambda_function",
+  "version": "1.0.0",
+  "description": "Test project for setting up CI/CD with lambda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyngo/test_lambda_function.git"
+  },
+  "author": "Darragh Hayes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyngo/test_lambda_function/issues"
+  },
+  "homepage": "https://github.com/dyngo/test_lambda_function#readme"
+}

@@ -14,5 +14,10 @@ module.exports = {
   vpc: { // optional
     SecurityGroupIds: [],
     SubnetIds: []
+  },
+  eventSource: {
+    EventSourceArn: '<event source such as kinesis ARN>',
+    BatchSize: 200,
+    StartingPosition: "TRIM_HORIZON"
   }
 }

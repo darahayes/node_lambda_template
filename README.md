@@ -22,6 +22,14 @@ This is the hello world template but AWS provides plenty of 'blueprints' for int
 ##Configuration
 `lambda-config.defaults.js` should be renamed to `lambda-config.js` and should be set up appropriately. This script reads AWS credentials from the environment and defines parameters for the creation of the lambda function.
 
+##Set up CircleCI
+If you've cloned this project to create a new lambda function, you should set up CircleCI.
+
+All you need to do is add the project and do the following.
+
+- Click the settings icon beside the project. Under `Build Settings > Advanced Settings` permissive building of fork pull requests` should be **on.**
+- Under `Build Settings > Environment Variables` add the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID.
+
 ##Testing
 For now testing is done with [mocha](https://mochajs.org/). Mocha is easy to setup and it works well with callback heavy code.
 

@@ -4,7 +4,9 @@
   "description": "Test project for setting up CI/CD with lambda",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/gulp/bin/gulp.js build",
+    "deploy": "./node_modules/gulp/bin/gulp.js deploy",
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/dyngo/test_lambda_function/issues"
   },
-  "homepage": "https://github.com/dyngo/test_lambda_function#readme"
+  "homepage": "https://github.com/dyngo/test_lambda_function#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-install": "^0.6.0",
+    "gulp-zip": "^3.0.2",
+    "mocha": "^2.5.3",
+    "node-aws-lambda": "0.1.8",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {}
 }

@@ -1,10 +1,16 @@
 const assert = require('assert');
+const handler = require('../index').handler;
 
-describe('Array', function() {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
-      assert.equal(-1, [1,2,3].indexOf(5));
-      assert.equal(-1, [1,2,3].indexOf(0));
-    });
+describe('handler', () => {
+  it('should return the key1 value', (done) => {
+    var event = {
+      'key1': 'hello',
+      'key2': 'world'
+    };
+    handler(event, null, (err, result) => {
+      assert.equal(err, null);
+      assert.equal(result, 'hello');
+      done();
+    })
   });
 });

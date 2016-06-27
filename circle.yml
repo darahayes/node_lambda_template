@@ -4,6 +4,6 @@ machine:
 
 deployment:
   staging:
-    branch: gulp_deployment
+    branch: master
     commands:
       - npm run deploy
